@@ -3,815 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mộc Điều – Mộc vị tự nhiên – Trọn vị hạt điều</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>Mộc Điều - Hạt Điều Rang Muối Chuẩn Vị</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-brown: #4A3525;
-            --secondary-blue: #2C4A6F;
-            --bg-cream: #FDFBF7;
-            --card-bg: #FFFFFF;
-            --text-main: #2D241E;
-            --text-muted: #6B5E55;
-            --border-color: #E6DFD5;
-            --accent-green: #587A64;
+            --primary: #2C221E;
+            --accent: #A36B39;
+            --bg-light: #FBF9F5;
+            --white: #FFFFFF;
+            --text-main: #332B25;
+            --text-muted: #7A6F66;
         }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Be Vietnam Pro', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-cream);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        /* Header & Navigation */
+        /* Header / Navbar */
         header {
-            position: sticky;
-            top: 0;
-            background-color: rgba(253, 251, 247, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
+            background-color: var(--white);
+            padding: 20px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 24px;
+            border-bottom: 1px solid #EFECE6;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-
-        .logo {
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: var(--primary-brown);
-            letter-spacing: 1px;
-            text-decoration: none;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 24px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--primary-brown);
-        }
-
-        .header-actions {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }
-
-        .btn-cart {
-            background: none;
-            border: none;
-            font-size: 1.2rem;
-            color: var(--primary-brown);
-            cursor: pointer;
-            position: relative;
-        }
-
-        .cart-badge {
-            position: absolute;
-            top: -6px;
-            right: -8px;
-            background: var(--primary-brown);
-            color: white;
-            font-size: 0.7rem;
-            padding: 2px 5px;
-            border-radius: 50%;
-        }
+        .logo { font-weight: 700; font-size: 1.5rem; color: var(--primary); letter-spacing: 1px; }
+        nav a { margin-left: 24px; text-decoration: none; color: var(--text-muted); font-weight: 500; transition: 0.3s; }
+        nav a:hover { color: var(--accent); }
 
         /* Hero Section */
         .hero {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            padding: 60px 24px;
-            max-width: 1200px;
+            text-align: center;
+            padding: 80px 20px;
+            max-width: 800px;
             margin: 0 auto;
         }
-
-        .hero-content h1 {
-            font-size: 2.5rem;
-            color: var(--primary-brown);
-            margin-bottom: 16px;
-            font-weight: 700;
-        }
-
-        .hero-content .slogan {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--secondary-blue);
-            margin-bottom: 16px;
-        }
-
-        .hero-content p {
-            color: var(--text-muted);
-            margin-bottom: 24px;
-            font-size: 1rem;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            border-radius: 6px;
-            font-weight: 600;
+        .hero h1 { font-size: 3rem; color: var(--primary); margin-bottom: 20px; font-weight: 700; }
+        .hero p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 30px; }
+        .btn-cta {
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 30px;
             text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            font-size: 0.9rem;
-            border: none;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-brown);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            opacity: 0.9;
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 1px solid var(--primary-brown);
-            color: var(--primary-brown);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary-brown);
-            color: white;
-        }
-
-        .hero-image img {
-            width: 100%;
-            border-radius: 12px;
-            object-fit: cover;
-            box-shadow: 0 10px 30px rgba(74, 53, 37, 0.08);
-        }
-
-        /* Section Layout Common */
-        section {
-            padding: 60px 24px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--primary-brown);
-            margin-bottom: 12px;
-            font-weight: 700;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            font-size: 1rem;
-        }
-
-        /* Products Section */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
-        }
-
-        .product-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .product-img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            background-color: #eee;
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-name {
-            font-size: 1.1rem;
             font-weight: 600;
-            color: var(--text-main);
-            margin-bottom: 8px;
+            box-shadow: 0 4px 14px rgba(163, 107, 57, 0.3);
+            transition: 0.3s;
         }
+        .btn-cta:hover { background-color: #8D5A2E; transform: translateY(-2px); }
 
-        .product-desc {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 12px;
-        }
-
-        .product-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-        }
-
-        .product-price {
-            font-weight: 700;
-            color: var(--primary-brown);
-            font-size: 1.1rem;
-        }
-
-        .product-weight {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .product-actions {
+        /* Features Grid */
+        .features {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto 80px auto;
+            padding: 0 20px;
         }
-
-        .product-actions .btn {
-            text-align: center;
-            padding: 8px 12px;
-            font-size: 0.85rem;
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            text-align: left;
+            border: 1px solid #EFECE6;
         }
-
-        .view-all-container {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        /* Why Mộc Điều */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 24px;
-        }
-
-        .feature-item {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 30px 20px;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .feature-item i {
-            font-size: 2rem;
-            color: var(--primary-brown);
-            margin-bottom: 16px;
-        }
-
-        .feature-item h3 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            color: var(--text-main);
-        }
-
-        .feature-item p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        /* Brand Story */
-        .story-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-            background: #F5F2EB;
-            padding: 40px;
-            border-radius: 12px;
-        }
-
-        .story-text h2 {
-            font-size: 1.8rem;
-            color: var(--primary-brown);
-            margin-bottom: 16px;
-        }
-
-        .story-text p {
-            color: var(--text-muted);
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-
-        .story-image img {
-            width: 100%;
-            border-radius: 8px;
-            object-fit: cover;
-        }
-
-        /* Process Section */
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            position: relative;
-        }
-
-        .process-step {
-            text-align: center;
-            padding: 20px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-        }
-
-        .process-step .step-num {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--secondary-blue);
-            margin-bottom: 8px;
-        }
-
-        .process-step h4 {
-            font-size: 1rem;
-            margin-bottom: 6px;
-            color: var(--text-main);
-        }
-
-        .process-step p {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        /* Blog Section */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-        }
-
-        .blog-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .blog-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .blog-content {
-            padding: 20px;
-        }
-
-        .blog-date {
-            font-size: 0.75rem;
-            color: var(--secondary-blue);
-            margin-bottom: 6px;
-            font-weight: 500;
-        }
-
-        .blog-title {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-main);
-            margin-bottom: 8px;
-        }
-
-        .blog-desc {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-        }
-
-        .read-more {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--primary-brown);
-            text-decoration: none;
-        }
-
-        /* QR / Customer Care CTA */
-        .qr-section {
-            background: var(--primary-brown);
-            color: white;
-            border-radius: 12px;
-            padding: 50px 30px;
-            text-align: center;
-            max-width: 1200px;
-            margin: 40px auto;
-        }
-
-        .qr-section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 12px;
-        }
-
-        .qr-section p {
-            max-width: 600px;
-            margin: 0 auto 24px auto;
-            color: #E6DFD5;
-            font-size: 0.95rem;
-        }
-
-        .qr-section .btn {
-            background-color: white;
-            color: var(--primary-brown);
-        }
+        .card h3 { color: var(--primary); margin-bottom: 12px; font-size: 1.25rem; }
+        .card p { color: var(--text-muted); font-size: 0.95rem; }
 
         /* Footer */
         footer {
-            background-color: #2D241E;
-            color: #E6DFD5;
-            padding: 60px 24px 30px 24px;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-col h3 {
-            font-size: 1.1rem;
-            color: white;
-            margin-bottom: 16px;
-        }
-
-        .footer-col p, .footer-col ul li a {
-            font-size: 0.85rem;
-            color: #B5A89E;
-            text-decoration: none;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col ul li a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
-            border-top: 1px solid #43352B;
-            padding-top: 20px;
             text-align: center;
-            font-size: 0.8rem;
-            color: #8C7B70;
-        }
-
-        /* Sticky Mobile Buy Button */
-        .mobile-sticky-cta {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: white;
-            padding: 12px 24px;
-            border-top: 1px solid var(--border-color);
-            box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
-            z-index: 999;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .mobile-sticky-cta .price-box {
-            font-weight: 700;
-            color: var(--primary-brown);
-            font-size: 1.1rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            nav {
-                display: none; /* Can be expanded with hamburger menu */
-            }
-            .hero {
-                grid-template-columns: 1fr;
-                padding: 30px 16px;
-                text-align: center;
-            }
-            .hero-buttons {
-                justify-content: center;
-            }
-            .story-container {
-                grid-template-columns: 1fr;
-                padding: 20px;
-            }
-            .mobile-sticky-cta {
-                display: flex;
-            }
-            section {
-                padding: 40px 16px;
-            }
+            padding: 30px;
+            background-color: var(--primary);
+            color: #C5BDB5;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header>
-        <a href="#" class="logo">MỘC ĐIỀU</a>
+        <div class="logo">MỘC ĐIỀU</div>
         <nav>
-            <ul>
-                <li><a href="#products">Sản phẩm</a></li>
-                <li><a href="#about">Về Mộc Điều</a></li>
-                <li><a href="#process">Quy trình</a></li>
-                <li><a href="#blog">Góc Mộc Điều</a></li>
-                <li><a href="#contact">Liên hệ</a></li>
-            </ul>
+            <a href="#">Trang chủ</a>
+            <a href="#">Sản phẩm</a>
+            <a href="#">Câu chuyện</a>
+            <a href="#">Liên hệ</a>
         </nav>
-        <div class="header-actions">
-            <button class="btn-cart" title="Giỏ hàng">
-                <i class="fa-solid fa-bag-shopping"></i>
-                <span class="cart-badge">0</span>
-            </button>
-        </div>
     </header>
 
-    <!-- Section 1: Hero -->
     <section class="hero">
-        <div class="hero-content">
-            <span class="slogan">“Mộc vị tự nhiên – Trọn vị hạt điều.”</span>
-            <h1>Tinh hoa hạt điều nguyên bản từ thiên nhiên</h1>
-            <p>Những hạt điều được chọn lọc kỹ lưỡng để mang đến vị bùi, béo và tự nhiên trong từng khoảnh khắc thưởng thức.</p>
-            <div class="hero-buttons">
-                <a href="#products" class="btn btn-primary">KHÁM PHÁ SẢN PHẨM</a>
-                <a href="#about" class="btn btn-outline">VỀ MỘC ĐIỀU</a>
-            </div>
+        <h1>Hạt Điều Rang Muối Chuẩn Vị Mộc Mạc</h1>
+        <p>Sản phẩm chất lượng cao kết nối trực tiếp từ nông sản Việt Nam, mang đến hương vị tự nhiên giòn rụm và thơm ngon nhất cho gia đình bạn.</p>
+        <a href="#" class="btn-cta">Khám Phá Ngay</a>
+    </section>
+
+    <section class="features">
+        <div class="card">
+            <h3>100% Tự Nhiên</h3>
+            <p>Hạt điều nguyên hạt được tuyển chọn khắt khe từ vùng đất chuyên canh, không hóa chất độc hại.</p>
         </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=800&q=80" alt="Hạt điều Mộc Điều cao cấp">
+        <div class="card">
+            <h3>Rang Thủ Công</h3>
+            <p>Phương pháp rang củi truyền thống giúp hạt giữ nguyên độ bùi, béo ngậy và giữ mùi thơm đặc trưng.</p>
+        </div>
+        <div class="card">
+            <h3>Trải Nghiệm Số</h3>
+            <p>Dễ dàng đặt hàng nhanh chóng qua mạng xã hội, tích hợp quét mã QR tiện lợi cho khách hàng hiện đại.</p>
         </div>
     </section>
 
-    <!-- Section 2: Sản phẩm nổi bật -->
-    <section id="products">
-        <h2 class="section-title">Khám phá vị Mộc</h2>
-        <p class="section-subtitle">Sản phẩm chất lượng cao được tuyển chọn khắt khe</p>
-        
-        <div class="product-grid">
-            <!-- Product 1 -->
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80" class="product-img" alt="Hạt điều rang muối">
-                <div class="product-info">
-                    <h3 class="product-name">Hạt Điều Rang Muối Vỏ Lụa</h3>
-                    <p class="product-desc">Giòn rụm, mặn ngọt hài hòa, giữ trọn hương vị nguyên bản.</p>
-                    <div class="product-meta">
-                        <span class="product-price">[GIÁ SẢN PHẨM]</span>
-                        <span class="product-weight">500g</span>
-                    </div>
-                    <div class="product-actions">
-                        <a href="#" class="btn btn-outline">Chi tiết</a>
-                        <a href="#" class="btn btn-primary">Mua ngay</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1543353071-10c8ba85a904?auto=format&fit=crop&w=500&q=80" class="product-img" alt="Hạt điều mộc tự nhiên">
-                <div class="product-info">
-                    <h3 class="product-name">Hạt Điều Mộc Tự Nhiên</h3>
-                    <p class="product-desc">Không tẩm ướp, thơm béo thuần túy, phù hợp ăn kiêng.</p>
-                    <div class="product-meta">
-                        <span class="product-price">[GIÁ SẢN PHẨM]</span>
-                        <span class="product-weight">500g</span>
-                    </div>
-                    <div class="product-actions">
-                        <a href="#" class="btn btn-outline">Chi tiết</a>
-                        <a href="#" class="btn btn-primary">Mua ngay</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1599599810694-b5b37242c4fe?auto=format&fit=crop&w=500&q=80" class="product-img" alt="Hạt điều rang tỏi ớt">
-                <div class="product-info">
-                    <h3 class="product-name">Hạt Điều Rang Tỏi Ớt</h3>
-                    <p class="product-desc">Đậm đà hương vị truyền thống, cay nhẹ kích thích vị giác.</p>
-                    <div class="product-meta">
-                        <span class="product-price">[GIÁ SẢN PHẨM]</span>
-                        <span class="product-weight">300g</span>
-                    </div>
-                    <div class="product-actions">
-                        <a href="#" class="btn btn-outline">Chi tiết</a>
-                        <a href="#" class="btn btn-primary">Mua ngay</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="view-all-container">
-            <a href="#" class="btn btn-outline">XEM TẤT CẢ SẢN PHẨM</a>
-        </div>
-    </section>
-
-    <!-- Section 3: Vì sao là Mộc Điều? -->
-    <section>
-        <h2 class="section-title">Điều gì tạo nên vị Mộc?</h2>
-        <p class="section-subtitle">Những giá trị cốt lõi chúng tôi đặt vào từng sản phẩm</p>
-
-        <div class="features-grid">
-            <div class="feature-item">
-                <i class="fa-solid fa-seedling"></i>
-                <h3>Tự nhiên</h3>
-                <p>Nguồn nguyên liệu chọn lọc kỹ càng, tôn trọng giá trị nguyên bản.</p>
-            </div>
-            <div class="feature-item">
-                <i class="fa-solid fa-cookie-bite"></i>
-                <h3>Hạt điều chọn lọc</h3>
-                <p>Độ đồng đều cao, hạt mẩy, chắc và thơm béo đặc trưng.</p>
-            </div>
-            <div class="feature-item">
-                <i class="fa-solid fa-gem"></i>
-                <h3>Chất lượng hàng đầu</h3>
-                <p>Quy trình kiểm soát nghiêm ngặt từ khâu chế biến đến đóng gói.</p>
-            </div>
-            <div class="feature-item">
-                <i class="fa-solid fa-heart"></i>
-                <h3>Trọn vị hạt điều</h3>
-                <p>Giữ lại trọn vẹn dinh dưỡng và hương vị thơm ngon nhất.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 4: Câu chuyện thương hiệu -->
-    <section id="about">
-        <div class="story-container">
-            <div class="story-text">
-                <h2>Mộc là cách chúng tôi trân trọng điều tự nhiên.</h2>
-                <p>Mộc Điều không hướng đến sự cầu kỳ mà muốn giữ lại cảm giác gần gũi, tự nhiên và chân thật trong từng sản phẩm. Mỗi hạt điều đến tay bạn đều chứa đựng sự tận tâm và tình yêu với nông sản Việt.</p>
-                <a href="#" class="btn btn-primary">KHÁM PHÁ CÂU CHUYỆN MỘC ĐIỀU</a>
-            </div>
-            <div class="story-image">
-                <img src="https://images.unsplash.com/photo-1543353071-10c8ba85a904?auto=format&fit=crop&w=600&q=80" alt="Câu chuyện Mộc Điều">
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 5: Quy trình sản phẩm -->
-    <section id="process">
-        <h2 class="section-title">Hành trình hạt điều Mộc</h2>
-        <p class="section-subtitle">Từ nông trại đến tay người thưởng thức</p>
-
-        <div class="process-steps">
-            <div class="process-step">
-                <div class="step-num">01</div>
-                <h4>Chọn lọc</h4>
-                <p>Lựa chọn những hạt điều đạt chuẩn.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-num">02</div>
-                <h4>Chế biến</h4>
-                <p>Rang sấy công nghệ giữ hương vị.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-num">03</div>
-                <h4>Đóng gói</h4>
-                <p>Đóng hộp/túi kín bảo quản tối ưu.</p>
-            </div>
-            <div class="process-step">
-                <div class="step-num">04</div>
-                <h4>Đến tay bạn</h4>
-                <p>Giao hàng nhanh chóng tận nơi.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 7: Góc Mộc Điều (Blog) -->
-    <section id="blog">
-        <h2 class="section-title">Góc Mộc Điều</h2>
-        <p class="section-subtitle">Kiến thức hữu ích và mẹo thưởng thức hạt điều</p>
-
-        <div class="blog-grid">
-            <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=500&q=80" class="blog-img" alt="Cách bảo quản hạt điều">
-                <div class="blog-content">
-                    <div class="blog-date">[NGÀY ĐĂNG]</div>
-                    <h3 class="blog-title">Cách bảo quản hạt điều để giữ độ giòn lâu nhất</h3>
-                    <p class="blog-desc">Mẹo đơn giản giúp hạt điều luôn giữ được độ giòn thơm như mới mở hộp...</p>
-                    <a href="#" class="read-more">Đọc thêm →</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80" class="blog-img" alt="Nhận biết hạt điều ngon">
-                <div class="blog-content">
-                    <div class="blog-date">[NGÀY ĐĂNG]</div>
-                    <h3 class="blog-title">Cách nhận biết hạt điều chất lượng cao chuẩn vị</h3>
-                    <p class="blog-desc">Bí quyết phân biệt các loại hạt điều trên thị trường một cách dễ dàng...</p>
-                    <a href="#" class="read-more">Đọc thêm →</a>
-                </div>
-            </div>
-            <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1599599810694-b5b37242c4fe?auto=format&fit=crop&w=500&q=80" class="blog-img" alt="Hạt điều và sức khỏe">
-                <div class="blog-content">
-                    <div class="blog-date">[NGÀY ĐĂNG]</div>
-                    <h3 class="blog-title">Hạt điều rang muối và hạt điều tự nhiên khác nhau thế nào?</h3>
-                    <p class="blog-desc">So sánh chi tiết giúp bạn lựa chọn sản phẩm phù hợp với nhu cầu...</p>
-                    <a href="#" class="read-more">Đọc thêm →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 9: QR & Chăm sóc khách hàng -->
-    <section>
-        <div class="qr-section">
-            <h2>Đồng hành cùng Mộc Điều sau mỗi hộp hạt điều</h2>
-            <p>Quét mã QR trên bao bì sản phẩm để nhận hướng dẫn bảo quản, ưu đãi độc quyền và kết nối trực tiếp với đội ngũ chăm sóc khách hàng.</p>
-            <a href="#" class="btn">KẾT NỐI CÙNG MỘC ĐIỀU</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="footer-container">
-            <div class="footer-col">
-                <h3>MỘC ĐIỀU</h3>
-                <p>“Mộc vị tự nhiên – Trọn vị hạt điều.”</p>
-                <p style="margin-top: 12px;">Hotline: [SỐ ĐIỆN THOẠI]</p>
-                <p>Email: [EMAIL]</p>
-            </div>
-            <div class="footer-col">
-                <h3>Khám phá</h3>
-                <ul>
-                    <li><a href="#products">Sản phẩm</a></li>
-                    <li><a href="#about">Về Mộc Điều</a></li>
-                    <li><a href="#process">Quy trình</a></li>
-                    <li><a href="#blog">Góc Mộc Điều</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Chính sách</h3>
-                <ul>
-                    <li><a href="#">Chính sách đổi trả</a></li>
-                    <li><a href="#">Chính sách bảo mật</a></li>
-                    <li><a href="#">Điều khoản dịch vụ</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Kết nối</h3>
-                <ul>
-                    <li><a href="[LINK TIKTOK]" target="_blank"><i class="fa-brands fa-tiktok"></i> TikTok Mộc Điều</a></li>
-                    <li><a href="#">Facebook Fanpage</a></li>
-                    <li><a href="#">Zalo OA [SỐ ĐIỆN THOẠI]</a></li>
-                    <li>Địa chỉ: [ĐỊA CHỈ]</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2026 Mộc Điều. All rights reserved. Designed with Premium Natural Minimal style.
-        </div>
+    <footer>
+        <p>&copy; 2026 Mộc Điều. Dự án khởi nghiệp thương mại điện tử.</p>
     </footer>
-
-    <!-- Mobile Sticky CTA -->
-    <div class="mobile-sticky-cta">
-        <div>
-            <div style="font-size: 0.75rem; color: var(--text-muted);">Sản phẩm nổi bật</div>
-            <div class="price-box">[GIÁ SẢN PHẨM]</div>
-        </div>
-        <a href="#products" class="btn btn-primary" style="padding: 10px 20px;">MUA NGAY</a>
-    </div>
 
 </body>
 </html>
